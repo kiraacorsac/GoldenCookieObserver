@@ -16,6 +16,7 @@ class GoldenCookieObserver {
   }
 
   observe() {
+    let observer = this;
     Game.shimmerTypes['golden'].proxiedSpawned = Game.shimmerTypes['golden'].spawned;
     Object.defineProperties(Game.shimmerTypes['golden'], {
       "spawned": {
@@ -24,7 +25,7 @@ class GoldenCookieObserver {
         },
         set: function (val) {
           if (val > 0) {
-            this.beep(999, 220, 300);
+            observer.beep(999, 220, 300);
           }
           this.value = val;
         }
