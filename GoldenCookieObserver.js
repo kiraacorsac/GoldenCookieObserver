@@ -34,7 +34,7 @@ class GoldenCookieObserver {
         },
         set: function (val) {
           if (val > 0) {
-            observer.beep(observer.volume * Game.volume, 220, 150);
+            observer.beep(observer.volume * (Game.volume * 0.01) , 220, 150);
           }
           this.value = val;
         }
