@@ -34,7 +34,7 @@ class GoldenCookieObserver {
         },
         set: function (val) {
           if (val > 0) {
-            observer.beep(this.volume, 220, 150);
+            observer.beep(observer.volume, 220, 150);
           }
           this.value = val;
         }
