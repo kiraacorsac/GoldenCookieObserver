@@ -19,7 +19,7 @@ class GoldenCookieObserver {
     v.frequency.value = freq
     v.type = "square"
     u.connect(this.audio.destination)
-    u.gain.value = vol * 0.01
+    u.gain.value = parseFloat((vol * 0.01).toFixed(2));
     v.start(this.audio.currentTime)
     v.stop(this.audio.currentTime + duration * 0.001)
   }
