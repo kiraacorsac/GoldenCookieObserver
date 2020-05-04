@@ -1,7 +1,7 @@
 class GoldenCookieObserver {
   constructor() {
     this.audio = new AudioContext()
-    this._volume = 0;
+    this._volume = 5;
 
   }
   set volume(val) {
@@ -34,7 +34,7 @@ class GoldenCookieObserver {
         },
         set: function (val) {
           if (val > 0) {
-            observer.beep(this.volume, 220, 300);
+            observer.beep(this.volume, 220, 150);
           }
           this.value = val;
         }
@@ -52,14 +52,14 @@ if(Game == undefined){
   console.log("... but this is not Cookie Clicker, is it");
 
 }
-Game.observer = new GoldenCookieObserver;
+Game.Observer = new GoldenCookieObserver;
 var proceed = true;
-if (Game.version != Game.observer.forVersion()) {
-  proceed = confirm(`I made this for verison ${Game.observer.forVersion()}, you are running this on ${Game.version}. Your computer might explode or something (for example, it might just not work).`);
+if (Game.version != Game.Observer.forVersion()) {
+  proceed = confirm(`I made this for verison ${Game.Observer.forVersion()}, you are running this on ${Game.version}. Your computer might explode or something (for example, it might just not work).`);
 }
 
 if (proceed) {
-  Game.observer.observe();
+  Game.Observer.observe();
 }
 
 
